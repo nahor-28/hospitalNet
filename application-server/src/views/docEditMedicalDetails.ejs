@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="has-background-white-ter">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabric EHR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand has-text-white">
+        <span class="navbar-item "><strong>FABRIC EHR</strong></span>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href='/logout' class="button is-light">
+                Log Out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <section class="hero is-small is-success mb-4">
+    <div class="hero-body">
+      <p class="title">
+        Doctor Dashboard
+      </p>
+      <p class="subtitle">
+        Edit Medical Details
+      </p>
+    </div>
+  </section>
+
+    <div class="container mb-6">
+      <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="/doctors">Back To Home</a></li>
+          <li><a href="/doctors/view/patients">Patients</a></li>
+          <li><a href="/doctors/view/<%= parsedResponse.patientId %>/details">Details</a></li>
+          <li class="is-active"><a href="#" aria-current="page">Edit</a></li>
+        </ul>
+      </nav>
+        <section class="mb-4">
+            <p class="title"><%= parsedResponse.firstName %></p>
+            <p class="subtitle"><%= parsedResponse.patientId %></p>
+        </section>
+      <section>
+          
+        <div class="columns is-mobile is-centered">
+          <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
+            <p class="title is-4">Update Medical Details</p>
+            <div class="has-background-white p-5 box">
+              <form action="/doctors/update/<%= parsedResponse.patientId %>/medicaldetails?_method=PATCH" method="POST" enctype="multipart/form-data">
+                <div class="field">
+                  <label class="label" for="symptoms">Symptoms</label>
+                  <div class="control">
+                    <input class="input" type="text" name="symptoms" id="symptoms" value="<%= parsedResponse.symptoms %>">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="ehrfile">Report File</label>
+                  <div class="control">
+                    <input class="input" type="file" name="ehrfile" id="ehrfile">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="daignosis">Diagnosis</label>
+                  <div class="control">
+                    <input class="input" type="text" name="daignosis" id="daignosis" value="<%= parsedResponse.diagnosis %>">
+                  </div>  
+                </div>
+                <div class="field">
+                  <label class="label" for="treatment">Treatment</label>
+                  <div class="control">
+                    <input class="input" type="text" name="treatment" id="treatment" value="<%= parsedResponse.treatment %>">
+                  </div>  
+                </div>
+                <div class="field">
+                  <label class="label" for="followup">FollowUp</label>
+                  <div class="control">
+                    <input class="input" type="text" name="followup" id="followup" value="<%= parsedResponse.followUp %>">
+                  </div>  
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button class="button is-success">Update</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+      </section>
+
+      </div>
+      
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="has-background-white-ter">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabric EHR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body class="has-navbar-fixed-top has-background-white-ter">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand has-text-white">
+        <span class="navbar-item "><strong>FABRIC EHR</strong></span>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href='/logout' class="button is-light">
+                Log Out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <section class="hero is-small is-success mb-4">
+      <div class="hero-body">
+        <p class="title">
+          Doctor Dashboard
+        </p>
+        <p class="subtitle">
+          <%= parsedResponse.patientId %>        
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="/doctors">Back To Home</a></li>
+          <li><a href="/doctors/view/patients">Patients</a></li>
+          <li class="is-active"><a href="#" aria-current="page"><%= parsedResponse.patientId %></a></li>
+        </ul>
+      </nav>
+      <section>
+        <a href="/doctors/update/<%= parsedResponse.patientId %>/medicaldetails" class="button is-ghost">Update Details</a>
+        <a href="/doctors/update/<%= parsedResponse.patientId %>/medicaldetails" class="button is-info">View History</a>
+
+        <table class="table box">
+            <thead class="is-uppercase is-size-5">
+                <tr>
+                  <th><abbr title="Patient ID">PID</abbr></th>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Sex</th>
+                  <th><abbr title="Blood Group">BG</abbr></th>
+                  <th>Allergy</th>
+                  <th>Symptoms</th>
+                  <th>Diagnosis</th>
+                  <th>Treatment</th>
+                  <th>FollowUp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <th><%= parsedResponse.patientId %></th>
+                    <td><%= parsedResponse.firstName %> <%= parsedResponse.lastName %></td>
+                    <td><%= parsedResponse.age %></td>
+                    <td><%= parsedResponse.sex %></td>
+                    <td><%= parsedResponse.bloodGroup %></td>
+                    <td><%= parsedResponse.allergies %></td>
+                    <td><%= parsedResponse.symptoms %></td>
+                    <td><%= parsedResponse.diagnosis %></td>
+                    <td><%= parsedResponse.treatment %></td>
+                    <td><%= parsedResponse.followUp %></td>
+                  </tr>
+              </tbody>
+        </table>
+      </section>
+    </div>
+      
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fabric EHR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body class="has-navbar-fixed-top has-background-white-ter">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand has-text-white">
+          <span class="navbar-item "><strong>FABRIC EHR</strong></span>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href='/logout' class="button is-light">
+                  Log Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <section class="hero is-small is-success mb-4">
+        <div class="hero-body">
+          <p class="title">
+            Admin Dashboard
+          </p>
+          <p class="subtitle">
+            Doctors List
+          </p>
+        </div>
+    </section>
+      <div class="container">
+        <nav class="breadcrumb has-succeeds-separator" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/admin">Back To Home</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Doctors</a></li>
+          </ul>
+        </nav>
+        <section>
+          <table class="table box">
+              <thead class="is-uppercase is-size-5">
+                  <tr>
+                    <th>Doctor ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Specializes In</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(let d of response) { %>
+                    <tr>
+                      <th><%= d.id %></th>
+                      <td><%= d.firstName %></td>
+                      <td><%= d.lastName %></td>
+                      <td><%= d.speciality %></td>
+                    </tr>
+                  <% } %> 
+                </tbody>
+          </table>
+        </section>
+      </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Hyperledger Fabric</strong> by <a href="https://wiki.hyperledger.org/display/fabric">Hyperledger Foundation</a>. Hyperledger Project source code files are made available under the Apache License, Version 2.0 (Apache-2.0).
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>

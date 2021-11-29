@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="has-background-white-ter">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand has-text-white">
+        <span class="navbar-item "><strong>FABRIC EHR</strong></span>
+    
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href='/logout' class="button is-light">
+                Log Out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <section class="hero is-small is-success mb-4">
+    <div class="hero-body">
+      <p class="title">
+        Admin Dashboard
+      </p>
+      <p class="subtitle">
+        Register Doctor
+      </p>
+    </div>
+  </section>
+    <div class="container mb-6">
+      <section>
+        <div class="columns is-mobile is-centered">
+          <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+            <h1 class="title is-2 has-text-link	has-text-centered	">
+                Register Doctor
+            </h1>
+            <div class="has-background-white p-5 box">
+              <form action="/admin/register/doctor" method="post">
+                <div class="field">
+                  <label class="label">First Name</label>
+                  <div class="control">
+                    <input class="input" type="text" name="firstName" placeholder="First Name">
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <label class="label">Last Name</label>
+                  <div class="control">
+                    <input class="input" type="text" name="lastName" placeholder="Last Name">
+                  </div>  
+                </div>
+                
+                <div class="field">
+                  <label class="label">Specialise In</label>
+                  <div class="control">
+                    <input class="input" name="speciality" type="text">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Username</label>
+                  <div class="control">
+                    <input class="input" type="text" name="username" placeholder="HOSP$-DOC$">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                    <input class="input" type="text" name="password">
+                  </div>
+                </div>
+
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button class="button is-link">Register</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+
+          </div>
+      </section>
+
+      </div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong>Hyperledger Fabric</strong> by <a href="https://wiki.hyperledger.org/display/fabric">Hyperledger Foundation</a>. Hyperledger Project source code files are made available under the Apache License, Version 2.0 (Apache-2.0).
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>

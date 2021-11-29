@@ -1,0 +1,26 @@
+[
+    {
+        "hospitalId": "1",
+        "firstName": "Ryan",
+        "lastName": "Reynolds",
+        "speciality": "Neurosurgery"
+    },
+    {
+        "hospitalId": "2",
+        "firstName": "Jethalal",
+        "lastName": "Gada",
+        "speciality": "Cardiology"
+    },
+    {
+        "hospitalId": "1",
+        "firstName": "Peter",
+        "lastName": "Parker",
+        "speciality": "Opthamologist"
+    },
+    {
+        "hospitalId": "2",
+        "firstName": "Nobita",
+        "lastName": "Nobi",
+        "speciality": "Gynaecologist"
+    }
+]
